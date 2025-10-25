@@ -1,0 +1,207 @@
+/* Gold Calculator Stylesheet
+  --------------------------
+  Palette:
+  Page Background: #EBEAE8 (Light Silver/Greige)
+  Panel Background: #FFFFFF (White)
+  Primary Accent: #A38B4D (Brushed Gold)
+  Primary Text: #333333 (Dark Gray)
+  Border/Inactive: #CCCCCC (Subtle Silver)
+  Result BG: #F9F9F9 (Very Light Gray)
+*/
+
+/* Note: Apply the page background to your main layout or body tag 
+  to match the full design.
+*/
+/*
+body {
+  background-color: #EBEAE8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*/
+
+/* Main calculator panel */
+.gold-calculator-panel {
+  background-color: #ffffff;
+  max-width: 36rem; /* 576px */
+  margin: 0 2rem auto;
+  padding: 2.5rem; /* 40px - more spacious */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  color: #333333;
+  box-sizing: border-box;
+}
+
+.calc-title {
+  font-size: 1.75rem; /* 28px */
+  font-weight: 600;
+  margin-bottom: 2rem; /* 32px */
+  color: #333333;
+  text-align: center;
+}
+
+/* Grid for inputs */
+.calc-inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem; /* 20px */
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+/* Labels and text for inputs */
+.calc-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-label-text {
+  font-size: 0.875rem; /* 14px */
+  color: #555555;
+  margin-bottom: 0.375rem; /* 6px */
+  font-weight: 500;
+}
+
+/* Styling for <input> and <select> */
+.calc-input,
+.calc-select {
+  margin-top: 0;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 0.75rem; /* 12px */
+  font-size: 1rem; /* 16px */
+  background-color: #ffffff;
+  color: #333333;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus state with gold accent */
+.calc-input:focus,
+.calc-select:focus {
+  outline: none;
+  border-color: #a38b4d;
+  box-shadow: 0 0 0 3px rgba(163, 139, 77, 0.2);
+}
+
+/* Button group for toggles */
+.calc-button-group {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+  width: 100%;
+}
+
+.calc-toggle-btn {
+  flex-grow: 1; /* Makes buttons fill the space */
+  padding: 0.75rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #555555;
+  font-size: 0.9rem; /* 14.4px */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.calc-toggle-btn:not(.active):hover {
+  background-color: #f9f9f9;
+  border-color: #bbbbbb;
+}
+
+/* Active toggle button (Brushed Gold) */
+.calc-toggle-btn.active {
+  background-color: #a38b4d;
+  color: #ffffff;
+  border-color: #a38b4d;
+}
+
+/* Live price display area */
+.calc-price-display {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.calc-price-label {
+  font-size: 0.875rem;
+  color: #555555;
+}
+
+.calc-price-value {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333333;
+  margin-top: 0.25rem;
+}
+
+.calc-warning {
+  color: #d97706; /* Amber 600 */
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.calc-error {
+  color: #dc2626; /* Red 600 */
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+/* Final result box */
+.calc-result-box {
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* Very light gray */
+  border-radius: 8px;
+  text-align: center;
+}
+
+.calc-result-label {
+  font-size: 0.9rem;
+  color: #555555;
+  font-weight: 500;
+}
+
+.calc-result-value {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 700;
+  margin-top: 0.25rem;
+  color: #a38b4d; /* Gold accent for the result */
+}
+
+.calc-result-meta {
+  font-size: 0.875rem;
+  color: #777777;
+  margin-top: 0.25rem;
+}
+
+/* Disclaimer text */
+.calc-disclaimer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem; /* 12px */
+  color: #888888;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+  .gold-calculator-panel {
+    padding: 1.5rem; /* 24px */
+    margin: 1rem;
+  }
+
+  /* Stack the grid to 1 column on mobile */
+  .calc-inputs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Increase gap for stacked items */
+  }
+
+  .calc-title {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  .calc-result-value {
+    font-size: 1.75rem; /* 28px */
+  }
+}

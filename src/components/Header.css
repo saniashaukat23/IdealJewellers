@@ -1,0 +1,217 @@
+.main-header {
+  background-color: transparent; /* As per original component */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem; /* 16px 24px */
+  width: 100%;
+  max-width: 1280px; /* Equivalent to container mx-auto */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 50; /* Ensure header is on top */
+}
+
+/* Logo */
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* 12px */
+  text-decoration: none;
+  flex-shrink: 0; /* Prevents logo from shrinking */
+}
+
+.header-logo-image-wrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+/* Added style for the <img> tag */
+.header-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-logo-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600; /* Replaced font-semibold */
+  color: var(--color-text, #333333);
+  white-space: nowrap;
+}
+
+/* Desktop Navigation */
+.header-nav-desktop {
+  display: flex;
+  gap: 1.5rem; /* 24px */
+}
+
+.header-nav-link {
+  position: relative;
+  font-size: 0.9rem; /* 14.4px */
+  font-weight: 600;
+  color: var(--color-text-inactive, rgba(51, 51, 51, 0.6));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav-link:hover {
+  color: var(--color-text, #333333);
+}
+
+.header-nav-link.is-active {
+  color: var(--color-text, #333333);
+}
+
+/* Active link underline indicator */
+.header-nav-link.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent, #a38b4d);
+}
+
+.header-social-desktop {
+  display: block;
+}
+
+/* Mobile Menu Toggle */
+.header-menu-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text, #333333);
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.header-menu-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Side Panel */
+.header-nav-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 90vw;
+  height: 100%;
+  background-color: var(--color-panel-bg, #ffffff);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 101; /* Above overlay */
+  display: flex;
+  flex-direction: column;
+}
+
+.header-nav-mobile.is-open {
+  transform: translateX(0);
+}
+
+.header-nav-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  flex-shrink: 0;
+}
+
+.header-nav-mobile-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text, #333333);
+}
+
+.header-nav-mobile-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text, #333333);
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.header-nav-mobile-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.header-nav-mobile-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text-inactive, rgba(51, 51, 51, 0.6));
+  text-decoration: none;
+  padding: 0.75rem 0;
+  transition: color 0.2s ease;
+}
+
+.header-nav-mobile-link:hover {
+  color: var(--color-text, #333333);
+}
+
+.header-nav-mobile-link.is-active {
+  color: var(--color-accent, #a38b4d); /* Gold accent for active mobile link */
+  font-weight: 600;
+}
+
+.header-nav-mobile-social {
+  padding: 1.5rem;
+  margin-top: auto;
+  border-top: 1px solid var(--color-border, #e0e0e0);
+  flex-shrink: 0;
+}
+
+/* Overlay */
+.header-nav-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* --- Responsive --- */
+/* (768px is a common breakpoint for md) */
+@media (max-width: 768px) {
+  .header-nav-desktop {
+    display: none;
+  }
+
+  .header-social-desktop {
+    display: none;
+  }
+
+  .header-menu-toggle {
+    display: block;
+  }
+
+  .main-header {
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+
+  .header-logo-title {
+    font-size: 1.15rem; /* Slightly smaller title on mobile */
+  }
+}

@@ -1,0 +1,100 @@
+/* Hero Section Stylesheet
+  --------------------------
+  Palette:
+  --color-text: #333333
+  --color-text-inactive: rgba(51, 51, 51, 0.6)
+  --color-border-silver: #CCCCCC
+  --color-accent: #A38B4D
+*/
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  min-height: 500px;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -10; /* Behind content */
+  overflow: hidden;
+}
+
+.hero-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Changed from 'top bottom' to 'center' for better responsiveness */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1280px; /* Equivalent to 'container' */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6rem; /* Equivalent to p-24, will adjust for mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box; /* Ensures padding is included in height calculation */
+}
+
+.hero-title {
+  font-size: 3.125rem; /* ~text-5xl */
+  font-weight: 700;
+  color: var(--color-text, #333333);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem; /* ~text-lg */
+  color: var(--color-text-inactive, rgba(51, 51, 51, 0.6));
+  max-width: 600px; /* Keeps line length readable */
+}
+
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* gap-2 */
+  margin-top: 1.5rem; /* mt-6 */
+  padding: 0.75rem 1.5rem; /* p-3 + horizontal padding */
+  font-weight: 600; /* font-medium */
+  background-color: transparent;
+  border: 1px solid black;
+  color: var(--color-text, #333333);
+  border-radius: 8px; /* rounded-md */
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-cta-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 4rem 1.5rem; /* Smaller padding on mobile */
+  }
+
+  .hero-title {
+    font-size: 2.25rem; /* Smaller title */
+  }
+
+  .hero-subtitle {
+    font-size: 1rem; /* Smaller subtitle */
+  }
+
+  .hero-cta-button {
+    padding: 0.75rem 1.25rem;
+  }
+}

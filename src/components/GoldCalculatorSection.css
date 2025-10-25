@@ -1,0 +1,72 @@
+/* Gold Calculator Section Stylesheet
+  --------------------------
+  Palette (for reference):
+  --color-bg-page: #EBEAE8 (Page BG)
+  --color-accent: #A38B4D (Brushed Gold)
+  --color-text: #333333 (Dark Gray)
+  --color-text-light: #555555 (Lighter Gray)
+*/
+
+/* Main section wrapper */
+.calc-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Background element */
+.calc-section-bg {
+  background-color: var(--color-bg-page, #ebeae8);
+  padding: 4rem 1.5rem; /* 64px top/bottom, 24px sides */
+}
+
+/* Centered content container */
+.calc-section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header block for title and subtitle */
+.calc-section-header {
+  text-align: center;
+  margin-bottom: 3rem; /* 48px - space above the calculator panel */
+  max-width: 600px; /* Constrain text width for readability */
+}
+
+/* Main title (h2) */
+.calc-section-title {
+  font-size: 2.25rem; /* 36px */
+  font-weight: 600;
+  color: var(--color-text, #333333);
+  margin-bottom: 0.75rem; /* 12px */
+  line-height: 1.2;
+}
+
+/* Subtitle (h3) */
+.calc-section-subtitle {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 400;
+  color: var(--color-text-light, #555555);
+  line-height: 1.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .calc-section-bg {
+    padding: 3rem 1rem; /* Reduce padding on tablet/mobile */
+  }
+
+  .calc-section-title {
+    font-size: 1.875rem; /* 30px */
+  }
+
+  .calc-section-subtitle {
+    font-size: 1rem; /* 16px */
+  }
+
+  .calc-section-header {
+    margin-bottom: 2.5rem; /* Reduce space on mobile */
+  }
+}
