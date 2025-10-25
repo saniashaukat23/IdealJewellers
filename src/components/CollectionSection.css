@@ -73,6 +73,7 @@
 
   .collection-section {
     padding-bottom: 4rem; /* Smaller padding on mobile */
+    padding-top: 4rem;
   }
 
   .collection-title {

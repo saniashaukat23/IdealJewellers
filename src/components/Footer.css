@@ -1,12 +1,12 @@
 /* Footer Stylesheet
-  --------------------------
-  Palette:
-  --color-bg-footer: #FFFFFF (Footer BG)
-  --color-bg-page: #EBEAE8 (Page BG)
-  --color-accent: #A38B4D (Brushed Gold)
-  --color-text: #333333 (Dark Gray)
-  --color-text-light: #555555 (Lighter Gray)
-  --color-border: #E0E0E0; (Light Border)
+ --------------------------
+ Palette:
+ --color-bg-footer: #FFFFFF (Footer BG)
+ --color-bg-page: #EBEAE8 (Page BG)
+ --color-accent: #A38B4D (Brushed Gold)
+ --color-text: #333333 (Dark Gray)
+ --color-text-light: #555555 (Lighter Gray)
+ --color-border: #E0E0E0; (Light Border)
 */
 
 .footer-section {
@@ -46,6 +46,8 @@
 
 /* Column 1: Brand */
 .footer-brand {
+  display: flex; /* Use flex for alignment */
+  flex-direction: column;
   gap: 1rem; /* Space between logo, tagline, social */
   grid-column: span 1 / span 1;
 }
@@ -83,6 +85,8 @@
 
 /* Column 2 & 3: Links */
 .footer-links {
+  display: flex; /* Use flex for alignment */
+  flex-direction: column;
   gap: 0.75rem; /* 12px */
 }
 
@@ -183,6 +187,14 @@
 
   .footer-brand {
     grid-column: span 1 / span 1;
+    /* --- NEW: Center brand column content --- */
+    align-items: center;
+    text-align: center;
+  }
+
+  /* --- NEW: Center social icons --- */
+  .footer-social-links {
+    justify-content: center;
   }
 
   .footer-newsletter {
@@ -191,6 +203,10 @@
 }
 
 @media (max-width: 600px) {
+  .sm-column-footer {
+    display: flex;
+    justify-content: space-around;
+  }
   .footer-main {
     grid-template-columns: 1fr; /* 1 column on mobile */
     gap: 2.5rem;
@@ -199,6 +215,17 @@
   .footer-column {
     /* Reset grid spans for single column */
     grid-column: span 1 / span 1;
+  }
+
+  /* --- NEW: Center brand column content --- */
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* --- NEW: Center social icons --- */
+  .footer-social-links {
+    justify-content: center;
   }
 
   .footer-bottom {

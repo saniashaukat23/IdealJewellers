@@ -74,42 +74,43 @@ export default function Footer() {
               />
             </div>
           </div>
+          <div className="sm-column-footer">
+            {/* Column 2: Navigation Links */}
+            <div className="footer-column footer-links">
+              <h4 className="footer-column-title">Quick Links</h4>
+              <a href="/" className="footer-link">
+                Home
+              </a>
+              <a href="/about" className="footer-link">
+                About Us
+              </a>
+              <a href="/gallery" className="footer-link">
+                Gallery
+              </a>
+              <a href="/contact" className="footer-link">
+                Contact Us
+              </a>
+              <a href="/products" className="footer-link">
+                Products
+              </a>
+            </div>
 
-          {/* Column 2: Navigation Links */}
-          <div className="footer-column footer-links">
-            <h4 className="footer-column-title">Quick Links</h4>
-            <a href="/" className="footer-link">
-              Home
-            </a>
-            <a href="/about" className="footer-link">
-              About Us
-            </a>
-            <a href="/gallery" className="footer-link">
-              Gallery
-            </a>
-            <a href="/contact" className="footer-link">
-              Contact Us
-            </a>
-            <a href="/products" className="footer-link">
-              Products
-            </a>
-          </div>
-
-          {/* Column 3: More Links */}
-          <div className="footer-column footer-links">
-            <h4 className="footer-column-title">Support</h4>
-            <a href="/faq" className="footer-link">
-              FAQs
-            </a>
-            <a href="/shipping" className="footer-link">
-              Shipping & Returns
-            </a>
-            <a href="/privacy" className="footer-link">
-              Privacy Policy
-            </a>
-            <a href="/calculator" className="footer-link">
-              Gold Calculator
-            </a>
+            {/* Column 3: More Links */}
+            <div className="footer-column footer-links">
+              <h4 className="footer-column-title">Support</h4>
+              <a href="/faq" className="footer-link">
+                FAQs
+              </a>
+              <a href="/shipping" className="footer-link">
+                Shipping & Returns
+              </a>
+              <a href="/privacy" className="footer-link">
+                Privacy Policy
+              </a>
+              <a href="/calculator" className="footer-link">
+                Gold Calculator
+              </a>
+            </div>
           </div>
 
           {/* Column 4: Newsletter */}
